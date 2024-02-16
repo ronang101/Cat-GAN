@@ -58,7 +58,7 @@ To test your ability to distinguish between real and generated images, play the 
 
 # How the GAN Model Works
 
-The Generative Adversarial Network (GAN) developed in this project is a sophisticated system designed to generate 64x64 pixel cat images that are remarkably similar to real cat photos. The model architecture and training methodology incorporate cutting-edge techniques in deep learning to achieve this goal.
+The Generative Adversarial Network (GAN) developed in this project is a system designed to generate 64x64 pixel cat images that are similar to real cat photos, the model architecture and training methodology incorporate techniques in deep learning to achieve this goal.
 
 ## Components of the GAN
 
@@ -97,5 +97,7 @@ This detailed explanation underscores the complex interplay between the generato
 
 ## Usage and Experimentation
 
-This project is open for anyone interested in deep learning, GANs, or image generation. Feel free to use it for further training, model experimentation, or as a basis for your projects. Once again please note a GPU is necessary for training and effectively running the model due to computational requirements
+This project is open for anyone interested in deep learning, GANs, or image generation. Feel free to use it for training, model experimentation, or as a basis for your projects. Once again please note a GPU is necessary for training and effectively running the model due to computational requirements
+
+**Note: Unfortunately due to github upload limits I cannot upload the current checkpoint of the model as it is too large but I have left the check point folder in to show you where your checkpoints will go if you train your own model.**
 
