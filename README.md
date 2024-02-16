@@ -20,6 +20,7 @@ A requirements.txt file is included in the repository, detailing all necessary P
 
 ```bash
 pip install -r requirements.txt
+```
 
 
 **Note:** Ensure that your environment meets the CUDA and cuDNN version requirements for optimal performance.
