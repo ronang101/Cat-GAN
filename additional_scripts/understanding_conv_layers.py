@@ -2,7 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation, PillowWriter
 from matplotlib.patches import Rectangle
-import tensorflow as tf
 
 
 
@@ -288,6 +287,9 @@ def animate(frame_and_highlights):
     # frame's content is erased and replaced with the new frame's content.
     ax.clear()
 
+    # Add a title to the plot. This will appear on every frame of the animation.
+    ax.set_title("Transposed Convolution Output Simulation")
+
     # Set up grid lines to visually delineate individual cells in the matrix.
     # The grid lines are positioned at half-integer locations to
     # line up with the edges of matrix cells, not the center.
@@ -482,6 +484,9 @@ def run_simulation_and_keras_model():
     outputs of the functions defined above
     are the same as the outputs from keras.
     """
+    import tensorflow as tf
+
+
     input_matrix = np.array([
         [14,  75, 249, 185, 214,  40, 174, 249],
         [42,   7, 186, 218,  27, 230, 235, 101],
