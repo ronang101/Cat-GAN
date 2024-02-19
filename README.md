@@ -67,6 +67,25 @@ The generator is a neural network that starts with a latent noise vector—essen
 ### Discriminator
 The discriminator acts as a critical evaluator of images, distinguishing between real images drawn from the training dataset and fake images produced by the generator. It mirrors the architecture of a typical convolutional neural network (CNN), gradually down-sampling the input image to extract features and ultimately producing a binary classification. Unlike traditional CNNs, the discriminator in this GAN setup does not end with a softmax layer; instead, it outputs a single value representing the authenticity of the input image, with the help of a sigmoid function applied at the end to interpret this value as the probability of the image being real.
 
+### Generator's Up-sampling Mechanism
+
+In the generator component of the GAN, the Conv2DTranspose layers serve as the backbone for up-sampling the input from a lower resolution to a higher one. Starting from an initial 8x8 representation, these layers methodically increase the resolution through a series of steps:
+
+- From 8x8 to 16x16: The first Conv2DTranspose layer takes the 8x8 input and doubles its dimensions to 16x16, expanding the feature map while introducing finer details.
+- Progressing to 32x32 and finally 64x64: Subsequent Conv2DTranspose layers continue this trend, each time doubling the resolution until reaching the final size of 64x64 pixels. This step-wise enlargement allows the network to incrementally refine the generated image, adding complexity and depth at each stage.
+
+Here is an example of how we transition from an 8x8 to a 16x16 resolution using Conv2DTranspose layers.
+
+![GAN Up-sampling Example Input and Kernal](https://github.com/ronang101/Cat-GAN/blob/main/convolution_examples/Input_and_kernal.png)
+
+![GAN Up-sampling Example Gif](https://github.com/ronang101/Cat-GAN/blob/main/convolution_examples/transposed_convolution.gif)
+
+In the **understanding_conv_layers.py** you can use your own input and kernal matrices in order to create your own gif if this can help with understanding how the layers work.
+
+### Discriminator's Down-sampling Mechanism
+
+Conversely, the discriminator performs the opposite operation. It starts with the high-resolution input (64x64 pixels) and applies convolutional layers to systematically reduce the image size, mirroring the generator's process in reverse. This down-sampling helps in extracting pivotal features from the images to assess their authenticity effectively.
+
 ## Training Dynamics
 
 The training of this GAN model is an iterative process of adjustment and counter-adjustment between the generator and discriminator. Initially, the generator produces images that are easily distinguishable from real images, allowing the discriminator to classify them with high accuracy. However, as training progresses:
@@ -88,25 +107,6 @@ In the initial phases, the generated images may bear little resemblance to actua
 
 ### Progressive Improvement
 As training progresses, visible improvements can be observed. The generator starts creating images with recognizable cat features, including faces, eyes, and fur patterns. This evolution can be seen in the training_images directory, where images from all epochs are stored, illustrating the gradual enhancement in quality and realism.
-
-# Generator's Up-sampling Mechanism
-
-In the generator component of the GAN, the Conv2DTranspose layers serve as the backbone for up-sampling the input from a lower resolution to a higher one. Starting from an initial 8x8 representation, these layers methodically increase the resolution through a series of steps:
-
-- From 8x8 to 16x16: The first Conv2DTranspose layer takes the 8x8 input and doubles its dimensions to 16x16, expanding the feature map while introducing finer details.
-- Progressing to 32x32 and finally 64x64: Subsequent Conv2DTranspose layers continue this trend, each time doubling the resolution until reaching the final size of 64x64 pixels. This step-wise enlargement allows the network to incrementally refine the generated image, adding complexity and depth at each stage.
-
-Here is an example of how we transition from an 8x8 to a 16x16 resolution using Conv2DTranspose layers.
-
-![GAN Up-sampling Example Input and Kernal](https://github.com/ronang101/Cat-GAN/blob/main/convolution_examples/Input_and_kernal.png)
-
-![GAN Up-sampling Example Gif](https://github.com/ronang101/Cat-GAN/blob/main/convolution_examples/transposed_convolution.gif)
-
-
-# Discriminator's Down-sampling Mechanism
-
-Conversely, the discriminator performs the opposite operation. It starts with the high-resolution input (64x64 pixels) and applies convolutional layers to systematically reduce the image size, mirroring the generator's process in reverse. This down-sampling helps in extracting pivotal features from the images to assess their authenticity effectively.
-
 
 ### Final Stages
 In the later stages of training, the generated images become increasingly difficult to distinguish from real cat photos, achieving the project's goal. Some images may still present artifacts or unrealistic elements, but many will pass as genuine cat images to the untrained eye. I will note the model I have created needs further training, but it is at a point where sometimes it can trick you as mentioned above.
