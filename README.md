@@ -89,7 +89,7 @@ In the initial phases, the generated images may bear little resemblance to actua
 ### Progressive Improvement
 As training progresses, visible improvements can be observed. The generator starts creating images with recognizable cat features, including faces, eyes, and fur patterns. This evolution can be seen in the training_images directory, where images from all epochs are stored, illustrating the gradual enhancement in quality and realism.
 
-## Generator's Up-sampling Mechanism
+### Generator's Up-sampling Mechanism
 
 In the generator component of the GAN, the Conv2DTranspose layers serve as the backbone for up-sampling the input from a lower resolution to a higher one. Starting from an initial 8x8 representation, these layers methodically increase the resolution through a series of steps:
 
@@ -104,7 +104,7 @@ Here is an example of how we transition from an 8x8 to a 16x16 resolution using 
 
 In the **understanding_conv_layers.py** you can use your own input and kernal matrices in order to create your own gif if this can help with understanding how the layers work.
 
-## Discriminator's Down-sampling Mechanism
+### Discriminator's Down-sampling Mechanism
 
 Conversely, the discriminator performs the opposite operation. It starts with the high-resolution input (64x64 pixels) and applies convolutional layers to systematically reduce the image size, mirroring the generator's process in reverse. This down-sampling helps in extracting pivotal features from the images to assess their authenticity effectively.
 
