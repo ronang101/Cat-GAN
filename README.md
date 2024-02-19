@@ -98,9 +98,9 @@ In the generator component of the GAN, the Conv2DTranspose layers serve as the b
 
 Here is an example of how we transition from an 8x8 to a 16x16 resolution using Conv2DTranspose layers.
 
-![GAN Up-sampling Example Input and Kernal]([https://github.com/your_username/your_repository/blob/main/images/gan_upsampling_example.png](https://github.com/ronang101/Cat-GAN/blob/main/convolution_examples/Input_and_kernal.png))
+![GAN Up-sampling Example Input and Kernal](https://github.com/ronang101/Cat-GAN/blob/main/convolution_examples/Input_and_kernal.png)
 
-![GAN Up-sampling Example Gif]([https://github.com/your_username/your_repository/blob/main/images/gan_upsampling_example.png](https://github.com/ronang101/Cat-GAN/blob/main/convolution_examples/transposed_convolution.gif))
+![GAN Up-sampling Example Gif](https://github.com/ronang101/Cat-GAN/blob/main/convolution_examples/transposed_convolution.gif)
 
 
 # Discriminator's Down-sampling Mechanism
