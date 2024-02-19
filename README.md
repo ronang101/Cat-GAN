@@ -74,7 +74,7 @@ In the generator component of the GAN, the Conv2DTranspose layers serve as the b
 - From 8x8 to 16x16: The first Conv2DTranspose layer takes the 8x8 input and doubles its dimensions to 16x16, expanding the feature map while introducing finer details.
 - Progressing to 32x32 and finally 64x64: Subsequent Conv2DTranspose layers continue this trend, each time doubling the resolution until reaching the final size of 64x64 pixels. This step-wise enlargement allows the network to incrementally refine the generated image, adding complexity and depth at each stage.
 
-Here is an example of how we transition from an 8x8 to a 16x16 resolution using Conv2DTranspose layers. Each matrix entry in the input layer is multipled by the kernel, the result of this is summed to a given area in the output matrix. This output area is determined by the kernel size and the padding used, below we use a 5x5 kernel and set the padding to "same", this resembles the layers in the GAN I have trained in the code.
+Here is an example of how we transition from an 8x8 to a 16x16 resolution using Conv2DTranspose layers. Each matrix entry in the input matrix is multipled by the kernel, the result of this is summed to a given area in the output matrix. This output area is determined by the kernel size and the padding used, below we use a 5x5 kernel and set the padding to "same", this resembles the layers in the GAN I have trained in the code.
 
 ![GAN Up-sampling Example Input and Kernal](https://github.com/ronang101/Cat-GAN/blob/main/convolution_examples/Input_and_kernal.png)
 
