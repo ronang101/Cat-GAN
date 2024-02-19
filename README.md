@@ -47,11 +47,11 @@ The model was trained and tested on an NVIDIA GeForce GTX 1650 Ti with the follo
 - Total Available Graphics Memory: 12160 MB
 - Dedicated Video Memory: 4096 MB GDDR6
 
-**Note: A GPU is necessary for training and effectively running the model due to computational requirements.**
+**Note: A GPU is not necessary for training but it will help running the model due to computational requirements.**
 
 ## Getting Started
 
-To train the GAN model, run python cats_training.py, if you have issues running the code due to your GPU not being detected try running the "run_training_with_GPU.bat" file and update the file locations in the file using a text editor
+To train the GAN model, run python cats_training.py, if you have issues running the code due or if your GPU is not being detected try running the "run_training_with_GPU.bat" file and update the file locations in the file using a text editor
 
 To test your ability to distinguish between real and generated images, play the interactive game by running python human_model_tester_game.py. Once again python can struggle to detect your GPU so if you run into issues try running "run_test_with_GPU.bat" and update the file first using a text editor.
 
@@ -97,7 +97,7 @@ This detailed explanation underscores the complex interplay between the generato
 
 ## Usage and Experimentation
 
-This project is open for anyone interested in deep learning, GANs, or image generation. Feel free to use it for training, model experimentation, or as a basis for your projects. Once again please note a GPU is necessary for training and effectively running the model due to computational requirements
+This project is open for anyone interested in deep learning, GANs, or image generation. Feel free to use it for training, model experimentation, or as a basis for your projects. Once again please note a GPU is not necessary but it will help with training and effectively running the model due to computational requirements
 
 **Note: Unfortunately due to github upload limits I cannot upload the current checkpoint of the model as it is too large but I have left the check point folder in to show you where your checkpoints will go if you train your own model.**
 
